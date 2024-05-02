@@ -6,6 +6,8 @@ to run
 
 clone repo
 
-npm i
-npm run build
-npm run start
+`npm i`
+
+`npm run build`
+
+`npm run start`
