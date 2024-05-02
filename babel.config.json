@@ -1,0 +1,12 @@
+{
+    "presets": [
+      ["@babel/preset-env", {
+        "targets": {
+          "node": "current"
+        },
+        "modules": false // This prevents Babel from transforming ES modules to CommonJS
+      }]
+    ]
+  }
+  
+  
