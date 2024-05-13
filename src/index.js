@@ -33,16 +33,14 @@ async function fetchTokenHoldings(walletAddress) {
         };
     });
         console.log(tokens);
-    //     const metaplex = Metaplex.make(connection);
-    //     console.log("helllo");
-    // for(let i = 0; i < tokens.length; i++){
-    //     console.log("we made it this far");
-    //     const metadataPda = metaplex.nfts().pdas().metadata({ mint: tokens[i]["mintAddress"] });
-    //     const account = await MetadataPointerInstruction.fromAccountAddress(connection, metadataPda);
-    //     console.log(tokens[i], account.data);
-    // }
-        
+        const metaplex = Metaplex.make(connection);
+        console.log("helllo");
+    for(let i = 0; i < tokens.length; i++){
+        await metaplex.nfts()
+        const nftMetadata = await metaplex.nfts().findByMint({ mintAddress: new web3.PublicKey(tokens[i]["mintAddress"]) });
+        console.log(nftMetadata);
     return tokens;
+}
 }
 
 async function main() {
