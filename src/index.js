@@ -2,6 +2,8 @@ import web3 from '@solana/web3.js'
 import { TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import {decode} from 'base58-universal';
 import readline from 'readline';
+import { Metaplex } from '@metaplex-foundation/js';
+
 
 async function fetchTokenHoldings(walletAddress) {
     const connection = new web3.Connection(web3.clusterApiUrl('mainnet-beta'), 'confirmed');
@@ -30,8 +32,16 @@ async function fetchTokenHoldings(walletAddress) {
             lamports: account.account.lamports
         };
     });
-
-    console.log(tokens);
+        console.log(tokens);
+    //     const metaplex = Metaplex.make(connection);
+    //     console.log("helllo");
+    // for(let i = 0; i < tokens.length; i++){
+    //     console.log("we made it this far");
+    //     const metadataPda = metaplex.nfts().pdas().metadata({ mint: tokens[i]["mintAddress"] });
+    //     const account = await MetadataPointerInstruction.fromAccountAddress(connection, metadataPda);
+    //     console.log(tokens[i], account.data);
+    // }
+        
     return tokens;
 }
 

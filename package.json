@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@metaplex-foundation/js": "^0.20.1",
     "@solana/spl-token": "^0.4.6",
     "@solana/web3.js": "^1.91.7",
     "base58-universal": "^2.0.0"
@@ -22,5 +23,5 @@
     "@babel/core": "^7.24.5",
     "@babel/preset-env": "^7.24.5",
     "nodemon": "^3.1.0"
-    }
+  }
 }
